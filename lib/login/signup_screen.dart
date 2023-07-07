@@ -12,28 +12,27 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      bottom: false,
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(tDefaultSize),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(tWelcomeScreenImage),
-                fit: BoxFit.cover,
+        body: Container(
+          padding: const EdgeInsets.all(tDefaultSize),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(tWelcomeScreenImage),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Column(
+            children: const [
+              FormHeaderWidget(
+                image: tGoogleLogoImage,
+                title: tSignUpTitle,
+                subTitle: tSignUpSubTitle,
+                imageHeight: 0.15,
               ),
-            ),
-            child: Column(
-              children: const [
-                FormHeaderWidget(
-                  image: tGoogleLogoImage,
-                  title: tSignUpTitle,
-                  subTitle: tSignUpSubTitle,
-                  imageHeight: 0.15,
-                ),
-                SignUpFormWidget(),
-                SignUpFooterWidget(),
-              ],
-            ),
+              SignUpFormWidget(),
+              SignUpFooterWidget(),
+            ],
           ),
         ),
       ),

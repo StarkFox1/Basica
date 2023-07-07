@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 /* -- LIST OF ALL COLORS -- */
 
 const tPrimaryColor = Color.fromARGB(255, 243, 242, 239);
-const tSecondaryColor = Color(0xFF272727);
+const tSecondaryColor = Color.fromARGB(255, 236, 232, 232);
 const tAccentColor = Color.fromARGB(255, 136, 144, 212);
 
 const tWhiteColor = Colors.white;
-const tDarkColor = Color(0xff000000);
+const tDarkColor = Color.fromARGB(255, 36, 30, 30);
 const tCardBgColor = Color(0xFFF7F6F1);
 
 // -- ON-BOARDING COLORS

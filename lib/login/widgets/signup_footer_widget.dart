@@ -9,22 +9,25 @@ class SignUpFooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: ((context) => LoginScreen())));
-          },
-          child: Text.rich(TextSpan(children: [
-            TextSpan(
-              text: tAlreadyHaveAnAccount,
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            TextSpan(text: tLogin.toUpperCase())
-          ])),
-        )
-      ],
+    return SafeArea(
+      bottom: false,
+      child: Column(
+        children: [
+          TextButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => LoginScreen())));
+            },
+            child: Text.rich(TextSpan(children: [
+              TextSpan(
+                text: tAlreadyHaveAnAccount,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              TextSpan(text: tLogin.toUpperCase())
+            ])),
+          )
+        ],
+      ),
     );
   }
 }

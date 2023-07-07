@@ -33,7 +33,11 @@ class FormHeaderWidget extends StatelessWidget {
             color: imageColor,
             height: size.height * imageHeight),
         SizedBox(height: heightBetween),
-        Text(title, style: Theme.of(context).textTheme.displayLarge),
+        Text(
+          title,
+          style: Theme.of(context).textTheme.displaySmall,
+          selectionColor: Color.fromARGB(255, 5, 131, 214),
+        ),
         Text(subTitle,
             textAlign: textAlign, style: Theme.of(context).textTheme.bodyLarge),
       ],
