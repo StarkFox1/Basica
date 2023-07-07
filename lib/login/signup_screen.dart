@@ -27,7 +27,7 @@ class SignUpScreen extends StatelessWidget {
                     gradient:
                         LinearGradient(begin: Alignment.bottomRight, colors: [
                   Colors.white.withOpacity(.9),
-                  Colors.white.withOpacity(.8),
+                  Colors.white.withOpacity(.9),
                   Colors.white.withOpacity(.5),
                 ])),
                 child: Padding(

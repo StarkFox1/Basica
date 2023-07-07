@@ -1,19 +1,20 @@
 name: basica
 description: A new Flutter project.
 
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
   sdk: '>=3.0.2 <4.0.0'
 
-
 dependencies:
   cupertino_icons: ^1.0.2
+  firebase_auth: ^4.6.3
   firebase_core: ^2.14.0
   flutter:
     sdk: flutter
   flutterfire_cli: ^0.2.7
+  get: ^4.6.5
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   shared_preferences: ^2.1.2
@@ -25,13 +26,10 @@ dev_dependencies:
     sdk: flutter
   hive_generator: ^1.1.1
 
-
 flutter:
 
-  
   uses-material-design: true
 
-  
   assets:
     - assets/Basica_Logo.png
     - assets/images/
