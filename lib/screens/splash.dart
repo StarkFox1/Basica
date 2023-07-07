@@ -1,7 +1,6 @@
+import 'package:basica/login/login.dart';
 import 'package:basica/main.dart';
 import 'package:basica/screens/home.dart';
-import 'package:basica/screens/login.dart';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

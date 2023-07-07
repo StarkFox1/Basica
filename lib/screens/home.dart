@@ -1,6 +1,6 @@
+import 'package:basica/login/login.dart';
 import 'package:basica/screens/bottomnavigation/account.dart';
 import 'package:basica/screens/bottomnavigation/list.dart';
-import 'package:basica/screens/login.dart';
 import 'package:basica/screens/bottomnavigation/main_screen.dart';
 import 'package:basica/screens/bottomnavigation/search.dart';
 import 'package:flutter/material.dart';

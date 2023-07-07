@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:basica/assets/colors.dart';
-import 'package:basica/assets/sizes.dart';
-import 'package:basica/assets/text.dart';
-import 'package:basica/assets/images.dart';
+import 'package:basica/login/assets/colors.dart';
+import 'package:basica/login/assets/sizes.dart';
+import 'package:basica/login/assets/text.dart';
+import 'package:basica/login/assets/images.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
