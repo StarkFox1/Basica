@@ -15,7 +15,7 @@ const String tOnBoardingImage3 =
 
 // -- Welcome Screen Images
 // -- also used in Login & SignUp
-const String tWelcomeScreenImage = "assets/images/welcome_image.png";
+const String tWelcomeScreenImage = "assets/images/welcome.png";
 
 // -- Login & SignUp Images
 
