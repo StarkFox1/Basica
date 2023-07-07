@@ -13,23 +13,37 @@ class LoginScreen extends StatelessWidget {
     //Get the size in LoginHeaderWidget()
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
-          padding: const EdgeInsets.all(tDefaultSize),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(tWelcomeScreenImage),
-              fit: BoxFit.cover,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(tWelcomeScreenImage),
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              LoginHeaderWidget(),
-              LoginForm(),
-              LoginFooterWidget(),
-            ],
-          ),
-        ),
+            child: Container(
+              decoration: BoxDecoration(
+                  gradient:
+                      LinearGradient(begin: Alignment.bottomRight, colors: [
+                Colors.white.withOpacity(.9),
+                Colors.white.withOpacity(.8),
+                Colors.white.withOpacity(.5),
+              ])),
+              child: Padding(
+                padding: const EdgeInsets.all(tDefaultSize),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    LoginHeaderWidget(),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    LoginForm(),
+                    LoginFooterWidget(),
+                  ],
+                ),
+              ),
+            )),
       ),
     );
   }

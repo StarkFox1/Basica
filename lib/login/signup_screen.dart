@@ -12,28 +12,40 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      bottom: false,
       child: Scaffold(
-        body: Container(
-          padding: const EdgeInsets.all(tDefaultSize),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(tWelcomeScreenImage),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Column(
-            children: const [
-              FormHeaderWidget(
-                image: tGoogleLogoImage,
-                title: tSignUpTitle,
-                subTitle: tSignUpSubTitle,
-                imageHeight: 0.15,
+        resizeToAvoidBottomInset: false,
+        body: SingleChildScrollView(
+          child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(tWelcomeScreenImage),
+                  fit: BoxFit.cover,
+                ),
               ),
-              SignUpFormWidget(),
-              SignUpFooterWidget(),
-            ],
-          ),
+              child: Container(
+                decoration: BoxDecoration(
+                    gradient:
+                        LinearGradient(begin: Alignment.bottomRight, colors: [
+                  Colors.white.withOpacity(.9),
+                  Colors.white.withOpacity(.8),
+                  Colors.white.withOpacity(.5),
+                ])),
+                child: Padding(
+                  padding: const EdgeInsets.all(tDefaultSize),
+                  child: Column(
+                    children: const [
+                      FormHeaderWidget(
+                        image: tGoogleLogoImage,
+                        title: tSignUpTitle,
+                        subTitle: tSignUpSubTitle,
+                        imageHeight: 0.15,
+                      ),
+                      SignUpFormWidget(),
+                      SignUpFooterWidget(),
+                    ],
+                  ),
+                ),
+              )),
         ),
       ),
     );
