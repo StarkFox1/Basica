@@ -60,6 +60,7 @@ class _ScreenHomeState extends State<ScreenHome> {
     final _sharedpref = await SharedPreferences.getInstance();
     await _sharedpref.clear();
     Navigator.of(ctx).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => LoginPage()), (route) => false);
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+        (route) => false);
   }
 }
