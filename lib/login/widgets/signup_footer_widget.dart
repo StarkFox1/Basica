@@ -1,6 +1,6 @@
+import 'package:basica/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:basica/login/assets/text.dart';
-import 'package:basica/login/assets/images.dart';
 
 class SignUpFooterWidget extends StatelessWidget {
   const SignUpFooterWidget({
@@ -11,20 +11,11 @@ class SignUpFooterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text("OR"),
-        SizedBox(
-          width: double.infinity,
-          child: OutlinedButton.icon(
-            onPressed: () {},
-            icon: const Image(
-              image: AssetImage(tGoogleLogoImage),
-              width: 20.0,
-            ),
-            label: Text(tSignInWithGoogle.toUpperCase()),
-          ),
-        ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => LoginScreen())));
+          },
           child: Text.rich(TextSpan(children: [
             TextSpan(
               text: tAlreadyHaveAnAccount,
