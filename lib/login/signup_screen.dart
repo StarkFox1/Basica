@@ -1,10 +1,10 @@
+import 'package:basica/login/form_header_widget.dart';
+import 'package:basica/login/widgets/signup_footer_widget.dart';
+import 'package:basica/login/widgets/signup_form_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:basica/assets/sizes.dart';
-import 'package:basica/assets/text.dart';
-import 'package:basica/assets/images.dart';
-import 'package:basica/screens/widgets/form_header_widget.dart';
-import 'package:basica/screens/widgets/signup_footer_widget.dart';
-import 'package:basica/screens/widgets/signup_form_widget.dart';
+import 'package:basica/login/assets/sizes.dart';
+import 'package:basica/login/assets/text.dart';
+import 'package:basica/login/assets/images.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);

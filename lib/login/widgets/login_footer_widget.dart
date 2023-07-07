@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:basica/assets/sizes.dart';
-import 'package:basica/assets/text.dart';
-import 'package:basica/assets/images.dart';
+import 'package:basica/login/assets/sizes.dart';
+import 'package:basica/login/assets/text.dart';
+import 'package:basica/login/assets/images.dart';
 
 class LoginFooterWidget extends StatelessWidget {
   const LoginFooterWidget({

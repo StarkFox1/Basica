@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:basica/assets/text.dart';
-import 'package:basica/assets/images.dart';
+import 'package:basica/login/assets/text.dart';
+import 'package:basica/login/assets/images.dart';
 
 class SignUpFooterWidget extends StatelessWidget {
   const SignUpFooterWidget({
@@ -28,7 +28,7 @@ class SignUpFooterWidget extends StatelessWidget {
           child: Text.rich(TextSpan(children: [
             TextSpan(
               text: tAlreadyHaveAnAccount,
-              style: Theme.of(context).textTheme.bodyText1,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             TextSpan(text: tLogin.toUpperCase())
           ])),

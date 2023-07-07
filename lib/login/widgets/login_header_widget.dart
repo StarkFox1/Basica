@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:basica/assets/text.dart';
-import 'package:basica/assets/images.dart';
+import 'package:basica/login/assets/text.dart';
+import 'package:basica/login/assets/images.dart';
 
 class LoginHeaderWidget extends StatelessWidget {
   const LoginHeaderWidget({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class LoginHeaderWidget extends StatelessWidget {
         Image(
             image: const AssetImage(tWelcomeScreenImage),
             height: size.height * 0.2),
-        Text(tLoginTitle, style: Theme.of(context).textTheme.headline1),
+        //Text(tLoginTitle, style: Theme.of(context).textTheme.headline1),
         Text(tLoginSubTitle, style: Theme.of(context).textTheme.bodyText1),
       ],
     );

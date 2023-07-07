@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:basica/assets/text.dart';
-import 'package:basica/assets/sizes.dart';
+import 'package:basica/login/assets/text.dart';
+import 'package:basica/login/assets/sizes.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
