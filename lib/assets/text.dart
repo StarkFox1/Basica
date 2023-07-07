@@ -26,9 +26,8 @@ const String tOnBoardingCounter2 = "2/3";
 const String tOnBoardingCounter3 = "3/3";
 
 // -- Welcome Screen Text
-const String tWelcomeTitle = "Build Awesome Apps";
-const String tWelcomeSubTitle =
-    "Let's put your creativity on the development highway.";
+const String tWelcomeTitle = "BASICA";
+const String tWelcomeSubTitle = "Effortless grocery shopping starts here";
 
 // -- Login Screen Text
 const String tLoginTitle = "Welcome Back,";

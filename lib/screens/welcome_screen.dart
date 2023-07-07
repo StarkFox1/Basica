@@ -3,6 +3,8 @@ import 'package:basica/assets/colors.dart';
 import 'package:basica/assets/sizes.dart';
 import 'package:basica/assets/text.dart';
 import 'package:basica/assets/images.dart';
+import 'login.dart';
+import 'signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -22,29 +24,48 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image(
-                image: const AssetImage(tWelcomeScreenImage),
-                height: height * 0.6),
+              image: const AssetImage(tWelcomeScreenImage),
+              height: height * 0.6,
+            ),
             Column(
               children: [
-                Text(tWelcomeTitle,
-                    style: Theme.of(context).textTheme.headline3),
-                Text(tWelcomeSubTitle,
-                    style: Theme.of(context).textTheme.bodyText1,
-                    textAlign: TextAlign.center),
+                Text(
+                  tWelcomeTitle,
+                  style: Theme.of(context).textTheme.headline3,
+                ),
+                Text(
+                  tWelcomeSubTitle,
+                  style: Theme.of(context).textTheme.bodyText1,
+                  textAlign: TextAlign.center,
+                ),
               ],
             ),
             Row(
               children: [
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                    },
                     child: Text(tLogin.toUpperCase()),
                   ),
                 ),
                 const SizedBox(width: 10.0),
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignUpScreen(),
+                        ),
+                      );
+                    },
                     child: Text(tSignup.toUpperCase()),
                   ),
                 ),

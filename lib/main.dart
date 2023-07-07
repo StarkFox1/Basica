@@ -1,4 +1,4 @@
-import 'package:basica/screens/splash.dart';
+import 'package:basica/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Login Page',
         theme: ThemeData(primarySwatch: Colors.green),
-        home: screenSplash());
+        home: WelcomeScreen());
   }
 }
 //hi

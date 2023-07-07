@@ -15,10 +15,10 @@ const String tOnBoardingImage3 =
 
 // -- Welcome Screen Images
 // -- also used in Login & SignUp
-const String tWelcomeScreenImage = "basica/assets/images/welcome_image.png";
+const String tWelcomeScreenImage = "assets/images/welcome_image.png";
 
 // -- Login & SignUp Images
-const String tGoogleLogoImage = "basica/assets/Basica_Logo.jpg";
+const String tGoogleLogoImage = "assets/Basica_Logo.jpg";
 
 // -- Forget Password Images
 const String tForgetPasswordImage =
