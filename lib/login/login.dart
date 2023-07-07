@@ -1,3 +1,4 @@
+import 'package:basica/login/assets/images.dart';
 import 'package:basica/login/widgets/login_footer_widget.dart';
 import 'package:basica/login/widgets/login_form_widget.dart';
 import 'package:basica/login/widgets/login_header_widget.dart';
@@ -15,6 +16,12 @@ class LoginScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(tDefaultSize),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(tWelcomeScreenImage),
+                fit: BoxFit.cover,
+              ),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [

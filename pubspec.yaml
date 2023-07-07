@@ -33,7 +33,7 @@ flutter:
 
   
   assets:
-    - assets/Basica_Logo.jpg
+    - assets/Basica_Logo.png
     - assets/images/
     - assets/images/categories_images/
     - assets/images/grocery_images/
