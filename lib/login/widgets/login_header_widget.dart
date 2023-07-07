@@ -13,10 +13,10 @@ class LoginHeaderWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image(
-            image: const AssetImage(tWelcomeScreenImage),
+            image: const AssetImage(tGoogleLogoImage),
             height: size.height * 0.2),
         //Text(tLoginTitle, style: Theme.of(context).textTheme.headline1),
-        Text(tLoginSubTitle, style: Theme.of(context).textTheme.bodyText1),
+        Text(tLoginSubTitle, style: Theme.of(context).textTheme.bodyLarge),
       ],
     );
   }

@@ -1,17 +1,10 @@
-import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:basica/assets/colors.dart';
-import 'package:basica/assets/sizes.dart';
-import 'package:basica/assets/text.dart';
-import 'package:basica/assets/images.dart';
-import 'login.dart';
-import 'signup_screen.dart';
-=======
 import 'package:basica/login/assets/colors.dart';
+import 'package:basica/login/assets/images.dart';
 import 'package:basica/login/assets/sizes.dart';
 import 'package:basica/login/assets/text.dart';
-import 'package:basica/login/assets/images.dart';
->>>>>>> 521a2aeca03e68076eac85b50034f65c778ecc37
+import 'package:basica/login/login.dart';
+import 'package:basica/login/signup_screen.dart';
+import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -31,23 +24,18 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Image(
-<<<<<<< HEAD
-              image: const AssetImage(tWelcomeScreenImage),
+              image: const AssetImage(tGoogleLogoImage),
               height: height * 0.6,
             ),
-=======
-                image: const AssetImage(tGoogleLogoImage),
-                height: height * 0.6),
->>>>>>> 521a2aeca03e68076eac85b50034f65c778ecc37
             Column(
               children: [
                 Text(
                   tWelcomeTitle,
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.displaySmall,
                 ),
                 Text(
                   tWelcomeSubTitle,
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
               ],

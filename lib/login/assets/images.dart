@@ -18,11 +18,8 @@ const String tOnBoardingImage3 =
 const String tWelcomeScreenImage = "assets/images/welcome_image.png";
 
 // -- Login & SignUp Images
-<<<<<<< HEAD:lib/assets/images.dart
-const String tGoogleLogoImage = "assets/Basica_Logo.jpg";
-=======
+
 const String tGoogleLogoImage = "assets/Basica_Logo.png";
->>>>>>> 521a2aeca03e68076eac85b50034f65c778ecc37:lib/login/assets/images.dart
 
 // -- Forget Password Images
 const String tForgetPasswordImage =

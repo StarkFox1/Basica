@@ -16,10 +16,16 @@ class SignUpScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.all(tDefaultSize),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(tWelcomeScreenImage),
+                fit: BoxFit.cover,
+              ),
+            ),
             child: Column(
               children: const [
                 FormHeaderWidget(
-                  image: tWelcomeScreenImage,
+                  image: tGoogleLogoImage,
                   title: tSignUpTitle,
                   subTitle: tSignUpSubTitle,
                   imageHeight: 0.15,
