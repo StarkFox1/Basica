@@ -31,14 +31,12 @@ const String tWelcomeSubTitle = "Effortless grocery shopping starts here";
 
 // -- Login Screen Text
 //const String tLoginTitle = "Welcome Back";
-const String tLoginSubTitle =
-    "Start shopping smarter and more efficiently with Basica";
+const String tLoginSubTitle = "Shop Smarter, Plan Better";
 const String tRememberMe = "Remember Me?";
 const String tDontHaveAnAccount = "Don't have an Account? ";
 
 // -- Sign Up Screen Text
 const String tSignUpTitle = "Sign Up for Better Shopping Experience!";
-const String tSignUpSubTitle = "Create your profile to start your Journey.";
 const String tAlreadyHaveAnAccount = "Already have an Account? ";
 
 // -- Forget Password Text

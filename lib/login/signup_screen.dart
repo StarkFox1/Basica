@@ -37,7 +37,6 @@ class SignUpScreen extends StatelessWidget {
                       FormHeaderWidget(
                         image: tGoogleLogoImage,
                         title: tSignUpTitle,
-                        subTitle: tSignUpSubTitle,
                         imageHeight: 0.15,
                       ),
                       SignUpFormWidget(),

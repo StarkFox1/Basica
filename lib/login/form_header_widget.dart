@@ -7,7 +7,8 @@ class FormHeaderWidget extends StatelessWidget {
     this.heightBetween,
     required this.image,
     required this.title,
-    required this.subTitle,
+
+    ///required this.subTitle,
     this.imageHeight = 0.2,
     this.textAlign,
     this.crossAxisAlignment = CrossAxisAlignment.start,
@@ -17,7 +18,7 @@ class FormHeaderWidget extends StatelessWidget {
   final Color? imageColor;
   final double imageHeight;
   final double? heightBetween;
-  final String image, title, subTitle;
+  final String image, title;
   final CrossAxisAlignment crossAxisAlignment;
   final TextAlign? textAlign;
 
@@ -38,8 +39,6 @@ class FormHeaderWidget extends StatelessWidget {
           style: Theme.of(context).textTheme.displaySmall,
           selectionColor: Color.fromARGB(255, 5, 131, 214),
         ),
-        Text(subTitle,
-            textAlign: textAlign, style: Theme.of(context).textTheme.bodyLarge),
       ],
     );
   }

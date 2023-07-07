@@ -16,11 +16,11 @@ class LoginHeaderWidget extends StatelessWidget {
             image: const AssetImage(tGoogleLogoImage),
             height: size.height * 0.2),
         //Text(tLoginTitle, style: Theme.of(context).textTheme.headline1),
-        Text(tLoginSubTitle,
-            style: TextStyle(
-                color: const Color.fromARGB(255, 41, 41, 41),
-                fontSize: 20,
-                fontWeight: FontWeight.bold)),
+        Text(
+          tLoginSubTitle,
+          style: Theme.of(context).textTheme.displaySmall,
+          selectionColor: Color.fromARGB(255, 5, 131, 214),
+        ),
       ],
     );
   }
