@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         title: 'Login Page',
         theme: ThemeData(primarySwatch: Colors.green),
         home: WelcomeScreen());

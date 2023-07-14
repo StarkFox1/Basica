@@ -12,9 +12,9 @@ class LoginController extends GetxController {
   /// TextField Validation
 
   //Call this Function from Design & it will do the rest
-  Future<void> login() async {
+  Future<void> login(String email, String password) async {
     String? error = await AuthenticationRepository.instance
-        .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
+        .loginWithEmailAndPassword(email.trim(), password.trim());
     if (error != null) {
       Get.showSnackbar(GetSnackBar(
         message: error.toString(),
