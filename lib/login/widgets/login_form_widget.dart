@@ -63,12 +63,10 @@ class LoginForm extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ScreenHome(),
-                    ),
-                  );
+                  if (_formKey.currentState!.validate()) {
+                    LoginController.instance.login(controller.email.text.trim(),
+                        controller.password.text.trim());
+                  }
                 },
                 child: Text(tLogin.toUpperCase()),
               ),
