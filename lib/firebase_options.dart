@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '586872962348',
     projectId: 'basica-61570',
     authDomain: 'basica-61570.firebaseapp.com',
+    databaseURL: 'https://basica-61570-default-rtdb.firebaseio.com',
     storageBucket: 'basica-61570.appspot.com',
     measurementId: 'G-REBW5T3CNF',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:586872962348:android:6e99e719455171096d0089',
     messagingSenderId: '586872962348',
     projectId: 'basica-61570',
+    databaseURL: 'https://basica-61570-default-rtdb.firebaseio.com',
     storageBucket: 'basica-61570.appspot.com',
   );
 
@@ -66,6 +68,7 @@ class DefaultFirebaseOptions {
     appId: '1:586872962348:ios:d2142aa2eb0333b86d0089',
     messagingSenderId: '586872962348',
     projectId: 'basica-61570',
+    databaseURL: 'https://basica-61570-default-rtdb.firebaseio.com',
     storageBucket: 'basica-61570.appspot.com',
     iosClientId: '586872962348-5e25846bklr36njhtnd5qeg47r7fagm1.apps.googleusercontent.com',
     iosBundleId: 'com.example.basica',
@@ -76,6 +79,7 @@ class DefaultFirebaseOptions {
     appId: '1:586872962348:ios:6da44e671cc50e6e6d0089',
     messagingSenderId: '586872962348',
     projectId: 'basica-61570',
+    databaseURL: 'https://basica-61570-default-rtdb.firebaseio.com',
     storageBucket: 'basica-61570.appspot.com',
     iosClientId: '586872962348-hesg69d0vjqee4n6bulc2qjmadg1531s.apps.googleusercontent.com',
     iosBundleId: 'com.example.basica.RunnerTests',

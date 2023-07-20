@@ -1,5 +1,4 @@
 import 'package:basica/screens/controller/login_controller.dart';
-import 'package:basica/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:basica/login/assets/text.dart';
 import 'package:basica/login/assets/sizes.dart';
