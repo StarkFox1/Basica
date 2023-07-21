@@ -52,12 +52,6 @@ class LoginForm extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: tFormHeight - 20),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                  onPressed: () {}, child: const Text(tForgetPassword)),
-            ),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
