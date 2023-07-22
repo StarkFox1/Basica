@@ -12,7 +12,7 @@ class SignUpController extends GetxController {
   final phoneNo = TextEditingController();
 
   //Call this Function from Design & it will do the rest
-  void registerUser(String email, String password) {
+  Future<void> registerUser(String email, String password) async {
     String? error = AuthenticationRepository.instance
         .createUserWithEmailAndPassword(email, password) as String?;
     if (error != null) {

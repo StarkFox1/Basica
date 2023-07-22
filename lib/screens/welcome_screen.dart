@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:basica/login/assets/colors.dart';
 import 'package:basica/login/assets/images.dart';
 import 'package:basica/login/assets/sizes.dart';
 import 'package:basica/login/assets/text.dart';
 import 'package:basica/login/login.dart';
 import 'package:basica/login/signup_screen.dart';
-import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -70,7 +70,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
