@@ -23,7 +23,7 @@ class _ScreenHomeState extends State<ScreenHome> {
 
   int _currentstate = 0;
 
-  final _pages = [ScreenMain(), Search(), Shoppinglist(), account()];
+  final _pages = [ScreenMain(), Search(), Shoppinglist(), add()];
 
   @override
   Widget build(BuildContext context) {

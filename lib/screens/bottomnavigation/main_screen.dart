@@ -10,7 +10,7 @@ class ScreenMain extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: ListView(
-        children: [Grocery_carousel(), drinks()],
+        children: [drinks()],
       )),
     );
   }
