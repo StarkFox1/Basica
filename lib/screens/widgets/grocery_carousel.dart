@@ -68,7 +68,10 @@ class Grocery_carousel extends StatelessWidget {
           backgroundImage: AssetImage(product.imagePath),
         ),
         title: Text(product.name),
-        trailing: ElevatedButton(child: Text("Add"),onPressed: ()=> ,),
+        trailing: ElevatedButton(
+          onPressed: () {},
+          child: Icon(Icons.add),
+        ),
         //subtitle: Text('${product.quantity}'),
       );
 
