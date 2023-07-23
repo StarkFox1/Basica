@@ -8,10 +8,7 @@ class ScreenMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: ListView(
-        children: [drinks()],
-      )),
+      body: SafeArea(child: Grocery_carousel()),
     );
   }
 }
