@@ -11,11 +11,10 @@ class DatabaseService {
       FirebaseFirestore.instance.collection('basica');
 
   // Update user data in Firestore
-  Future<void> updateUserData(String name, String email) async {
-    return await usersCollection.doc(uid).set({
-      'name': name,
-      'email': email,
-    });
+  Future<void> updateUserData(String name, String email, String phoneNo) async {
+    return await usersCollection
+        .doc(uid)
+        .set({'name': name, 'email': email, 'phoneNo': phoneNo});
   }
 
   // Add a new grocery item to Firestore

@@ -1,5 +1,5 @@
 import 'package:basica/model/groceries.dart';
-import 'package:basica/model/user.dart';
+
 import 'package:basica/screens/authentication_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';

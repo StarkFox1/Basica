@@ -8,13 +8,15 @@ class SignUpController extends GetxController {
   //TextField Controllers to get data from TextFields
   final email = TextEditingController();
   final password = TextEditingController();
-  final fullName = TextEditingController();
+  final name = TextEditingController();
   final phoneNo = TextEditingController();
 
   //Call this Function from Design & it will do the rest
-  Future<void> registerUser(String email, String password) async {
+  Future<void> registerUser(
+      String email, String password, String name, String phoneNo) async {
     String? error = AuthenticationRepository.instance
-        .createUserWithEmailAndPassword(email, password) as String?;
+            .createUserWithEmailAndPassword(email, password, name, phoneNo)
+        as String?;
     if (error != null) {
       Get.showSnackbar(GetSnackBar(message: error.toString()));
     }

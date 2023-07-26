@@ -22,7 +22,7 @@ class SignUpFormWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
-              controller: controller.fullName,
+              controller: controller.name,
               decoration: const InputDecoration(
                   label: Text(tFullName),
                   prefixIcon: Icon(Icons.person_outline_rounded)),
@@ -65,7 +65,9 @@ class SignUpFormWidget extends StatelessWidget {
                   if (_formKey.currentState!.validate()) {
                     SignUpController.instance.registerUser(
                         controller.email.text.trim(),
-                        controller.password.text.trim());
+                        controller.password.text.trim(),
+                        controller.name.text.trim(),
+                        controller.phoneNo.text.trim());
                   }
                 },
                 child: Text(tSignup.toUpperCase()),

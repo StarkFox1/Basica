@@ -22,10 +22,10 @@ class AuthenticationRepository extends GetxController {
 
   // FUNC
   Future<String?> createUserWithEmailAndPassword(
-      String email, String password) async {
+      String email, String password, String name, String phoneNo) async {
     try {
       await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+          email: email, password: password, name: name, phoneNo: phoneNo);
 
       // Get the instance of AuthenticationRepository
       final authRepo = AuthenticationRepository.instance;
@@ -37,7 +37,8 @@ class AuthenticationRepository extends GetxController {
       }
 
       // Update user data in Firestore
-      await DatabaseService(uid: authRepo.uid).updateUserData('Annlin', email);
+      await DatabaseService(uid: authRepo.uid)
+          .updateUserData(name, email, phoneNo);
     } on FirebaseAuthException catch (e) {
       final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
       return ex.message;
