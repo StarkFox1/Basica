@@ -1,36 +1,52 @@
+import 'package:basica/model/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-Future main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-}
+class AccountDetailsPage extends StatelessWidget {
+  // Add more variables for other account details if needed
 
-class add extends StatelessWidget {
-  final controller = TextEditingController();
+  AccountDetailsPage();
+
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: TextField(
-        controller: controller,
+    return const Scaffold(
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              CircleAvatar(
+                  radius: 80,
+                  backgroundImage: NetworkImage(
+                    'https://source.unsplash.com/50x50/?portrait',
+                  )),
+              SizedBox(height: 60.0),
+              Text(
+                'Name:',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                'Email: ',
+                style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                'Phone NO:',
+                style: TextStyle(fontSize: 18),
+              ),
+              // Add more Text widgets to display additional account details as needed
+            ],
+          ),
+        ),
       ),
-      actions: [
-        IconButton(
-            onPressed: () {
-              final name = controller.text;
-              createUser(name: name);
-            },
-            icon: Icon(Icons.add))
-      ],
     );
   }
+  final user=(uid: docUser.id,name:name)
 
-  Future createUser({required String name}) async {
-    final docUser =
-        FirebaseFirestore.instance.collection('products').doc('my_id');
-    final json = {'name': name, 'quantity': 0, 'imagePath': "Nill"};
-
-    await docUser.set(json);
-  }
+  Stream<List<User>> readUser() =>
+      FirebaseFirestore.instance.collection('user');
 }
