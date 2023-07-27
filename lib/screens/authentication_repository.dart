@@ -27,8 +27,8 @@ class AuthenticationRepository extends GetxController {
       await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
-        // name: name,
-        // phoneNo: phoneNo,
+        name: name,
+        phoneNo: phoneNo,
       );
 
       // Get the instance of AuthenticationRepository
