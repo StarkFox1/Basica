@@ -14,8 +14,10 @@ class LoginFooterWidget extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: ((context) => SignUpScreen())));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: ((context) => const SignUpScreen())));
           },
           child: Text.rich(
             TextSpan(

@@ -8,8 +8,8 @@ class drinks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Row(
             children: [
               SizedBox(
@@ -33,7 +33,7 @@ class drinks extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 GroceryItem groceries = beverages[index];
                 return Container(
-                  margin: EdgeInsets.all(10.0),
+                  margin: const EdgeInsets.all(10.0),
                   width: 210,
                   child: Stack(alignment: Alignment.topCenter, children: [
                     Positioned(
@@ -53,7 +53,7 @@ class drinks extends StatelessWidget {
                             children: [
                               Text(
                                 '${groceries.name}',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: 1.2),
@@ -68,7 +68,7 @@ class drinks extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20.0),
                           boxShadow: [
-                            BoxShadow(
+                            const BoxShadow(
                                 color: Colors.black26, offset: Offset(0.0, 2.0))
                           ],
                         ),

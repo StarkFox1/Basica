@@ -41,13 +41,14 @@ class AccountDetailsPage extends StatelessWidget {
                     height: 120,
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(100),
-                        child: Image(
+                        child: const Image(
                           image: AssetImage(tProfileImage),
                         ))),
                 const SizedBox(height: 10),
                 Text(
                   user.name,
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 20.0, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 10),
                 Text(

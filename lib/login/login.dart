@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(tWelcomeScreenImage),
                 fit: BoxFit.cover,
@@ -29,11 +29,11 @@ class LoginScreen extends StatelessWidget {
                 Colors.white.withOpacity(.8),
                 Colors.white.withOpacity(.5),
               ])),
-              child: Padding(
-                padding: const EdgeInsets.all(tDefaultSize),
+              child: const Padding(
+                padding: EdgeInsets.all(tDefaultSize),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     LoginHeaderWidget(),
                     LoginForm(),
                     LoginFooterWidget(),

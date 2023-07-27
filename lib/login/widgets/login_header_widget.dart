@@ -19,7 +19,7 @@ class LoginHeaderWidget extends StatelessWidget {
         Text(
           tLoginSubTitle,
           style: Theme.of(context).textTheme.displaySmall,
-          selectionColor: Color.fromARGB(255, 5, 131, 214),
+          selectionColor: const Color.fromARGB(255, 5, 131, 214),
         ),
       ],
     );

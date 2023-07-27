@@ -39,7 +39,7 @@ class _ScreenMainState extends State<ScreenMain> {
                   init: Get.put<ProductsController>(ProductsController()),
                   builder: (productController) {
                     if (productController.globalProducts.isEmpty) {
-                      return Center(child: const CircularProgressIndicator());
+                      return const Center(child: CircularProgressIndicator());
                     }
                     return ListView.builder(
                       itemCount: productController.globalProducts.length,

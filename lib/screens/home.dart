@@ -4,6 +4,7 @@ import 'package:basica/screens/bottomnavigation/list.dart';
 import 'package:basica/screens/bottomnavigation/main_screen.dart';
 import 'package:basica/screens/bottomnavigation/search.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttericon/entypo_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ScreenHome extends StatefulWidget {
@@ -40,7 +41,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                 onPressed: () {
                   signout(context);
                 },
-                icon: const Icon(Icons.exit_to_app))
+                icon: const Icon(Entypo.logout))
           ],
         ),
         body: _pages[_currentstate],
