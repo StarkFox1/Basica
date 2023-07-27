@@ -31,9 +31,9 @@ class AuthenticationRepository extends GetxController {
       final authRepo = AuthenticationRepository.instance;
 
       if (firebaseUser.value != null) {
-        Get.offAll(() => ScreenHome());
+        Get.offAll(() => const ScreenHome());
       } else {
-        Get.to(() => WelcomeScreen());
+        Get.to(() => const WelcomeScreen());
       }
 
       // Update user data in Firestore
@@ -54,9 +54,9 @@ class AuthenticationRepository extends GetxController {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
       if (firebaseUser.value != null) {
-        Get.offAll(() => ScreenHome());
+        Get.offAll(() => const ScreenHome());
       } else {
-        Get.to(() => WelcomeScreen());
+        Get.to(() => const WelcomeScreen());
       }
     } on FirebaseAuthException catch (e) {
       final ex = LoginWithEmailAndPasswordFailure.code(e.code);

@@ -1,5 +1,10 @@
-import 'package:basica/model/user.dart';
+import 'dart:js_interop';
+
+import 'package:basica/model/user.dart' as user;
+
+import 'package:basica/screens/authentication_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -10,43 +15,37 @@ class AccountDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              CircleAvatar(
-                  radius: 80,
-                  backgroundImage: NetworkImage(
-                    'https://source.unsplash.com/50x50/?portrait',
-                  )),
-              SizedBox(height: 60.0),
-              Text(
-                'Name:',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8.0),
-              Text(
-                'Email: ',
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(height: 8.0),
-              Text(
-                'Phone NO:',
-                style: TextStyle(fontSize: 18),
-              ),
-              // Add more Text widgets to display additional account details as needed
-            ],
-          ),
-        ),
-      ),
-    );
+    return Scaffold(
+        body: FutureBuilder<user.User?>(
+      future: readUser(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          final user = snapshot.data;
+          return user == null
+              ? Center(child: Text('No user'))
+              : buildUser(user);
+        } else {
+          return Center(child: CircularProgressIndicator());
+        }
+      },
+    ));
   }
-  final user=(uid: docUser.id,name:name)
 
-  Stream<List<User>> readUser() =>
-      FirebaseFirestore.instance.collection('user');
+  Widget buildUser(user.User user) => ListTile(
+        leading: CircleAvatar(child: Text('${user.PhoneNo}')),
+        title: Text(user.name),
+        subtitle: Text(user.mail),
+      );
+
+  Future<user.User?> readUser() async {
+    final snapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .get();
+
+    if (snapshot.exists) {
+      return user.User.fromJson(snapshot.data()!);
+    }
+    return null;
+  }
 }
