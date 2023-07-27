@@ -45,8 +45,8 @@ class AccountDetailsPage extends StatelessWidget {
       ),
     );
   }
-  final user=(uid: docUser.id,name:name)
-
-  Stream<List<User>> readUser() =>
-      FirebaseFirestore.instance.collection('user');
+  // final user=(uid: docUser.id,name:name)
+  //
+  // Stream<List<User>> readUser() =>
+  //     FirebaseFirestore.instance.collection('user');
 }

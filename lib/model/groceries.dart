@@ -1,19 +1,51 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class GroceryItem {
+  final String? id;
   final int quantity;
   final String name;
   final String imagePath;
 
   GroceryItem({
+    this.id,
     required this.quantity,
     required this.name,
     required this.imagePath,
   });
-  Map<String, dynamic> toJson() =>
-      {'name': name, 'quantity': quantity, 'imageURL': imagePath};
+
+  Map<String, dynamic> toJson() => {
+        'name': name,
+        'quantity': quantity,
+        'imageURL': imagePath,
+      };
+
   static GroceryItem fromJson(Map<String, dynamic> json) => GroceryItem(
       name: json['name'],
       quantity: json['quantity'],
       imagePath: json['imageURL']);
+
+  static GroceryItem fromDoc(QueryDocumentSnapshot doc) {
+    final json = doc.data() as Map<String, dynamic>;
+    return GroceryItem(
+        id: doc.id,
+        name: json['name'],
+        quantity: json['quantity'],
+        imagePath: json['imageURL']);
+  }
+
+  GroceryItem copyWith({
+    String? id,
+    int? quantity,
+    String? name,
+    String? imagePath,
+  }) {
+    return GroceryItem(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      quantity: quantity ?? this.quantity,
+      imagePath: imagePath ?? this.imagePath,
+    );
+  }
 }
 
 var beverages = [

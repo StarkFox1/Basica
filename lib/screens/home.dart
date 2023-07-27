@@ -23,19 +23,24 @@ class _ScreenHomeState extends State<ScreenHome> {
 
   int _currentstate = 0;
 
-  final _pages = [ScreenMain(), Search(), Shoppinglist(), AccountDetailsPage()];
+  final _pages = [
+    const ScreenMain(),
+    const SearchScreen(),
+    const ShoppingList(),
+    AccountDetailsPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Home'),
+          title: const Text('Home'),
           actions: [
             IconButton(
                 onPressed: () {
                   signout(context);
                 },
-                icon: Icon(Icons.exit_to_app))
+                icon: const Icon(Icons.exit_to_app))
           ],
         ),
         body: _pages[_currentstate],
@@ -60,7 +65,7 @@ class _ScreenHomeState extends State<ScreenHome> {
     final _sharedpref = await SharedPreferences.getInstance();
     await _sharedpref.clear();
     Navigator.of(ctx).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => LoginScreen()),
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
         (route) => false);
   }
 }

@@ -25,7 +25,11 @@ class AuthenticationRepository extends GetxController {
       String email, String password, String name, String phoneNo) async {
     try {
       await _auth.createUserWithEmailAndPassword(
-          email: email, password: password, name: name, phoneNo: phoneNo);
+        email: email,
+        password: password,
+        // name: name,
+        // phoneNo: phoneNo,
+      );
 
       // Get the instance of AuthenticationRepository
       final authRepo = AuthenticationRepository.instance;
