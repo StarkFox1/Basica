@@ -1,17 +1,16 @@
-import 'dart:js_interop';
-
+import 'package:basica/login/assets/images.dart';
+import 'package:basica/login/assets/sizes.dart';
 import 'package:basica/model/user.dart' as user;
 
-import 'package:basica/screens/authentication_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 
 class AccountDetailsPage extends StatelessWidget {
   // Add more variables for other account details if needed
 
-  AccountDetailsPage();
+  const AccountDetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +21,47 @@ class AccountDetailsPage extends StatelessWidget {
         if (snapshot.hasData) {
           final user = snapshot.data;
           return user == null
-              ? Center(child: Text('No user'))
+              ? const Center(child: Text('No user'))
               : buildUser(user);
         } else {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
       },
     ));
   }
 
-  Widget buildUser(user.User user) => ListTile(
-        leading: CircleAvatar(child: Text('${user.PhoneNo}')),
-        title: Text(user.name),
-        subtitle: Text(user.mail),
+  Widget buildUser(user.User user) => Scaffold(
+        body: Container(
+          padding: const EdgeInsets.all(tDefaultSize),
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(
+                    width: 120,
+                    height: 120,
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: Image(
+                          image: AssetImage(tProfileImage),
+                        ))),
+                const SizedBox(height: 10),
+                Text(
+                  user.name,
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  user.mail,
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  user.PhoneNo,
+                ),
+                const SizedBox(height: 10),
+              ],
+            ),
+          ),
+        ),
       );
 
   Future<user.User?> readUser() async {

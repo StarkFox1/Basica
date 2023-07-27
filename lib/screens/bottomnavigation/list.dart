@@ -1,55 +1,67 @@
-import 'package:basica/model/groceries.dart';
+import 'package:basica/controllers/products_controller.dart';
 
-import 'package:basica/screens/authentication_repository.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:basica/screens/widgets/personal_product_item.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Shoppinglist extends StatelessWidget {
-  const Shoppinglist({super.key});
+class ShoppingList extends StatefulWidget {
+  const ShoppingList({super.key});
+
+  @override
+  State<ShoppingList> createState() => _ShoppingListState();
+}
+
+class _ShoppingListState extends State<ShoppingList> {
+  bool updating = false;
+
+  void updateStatus(bool v) {
+    setState(() {
+      updating = v;
+    });
+  }
+
+  void markAsPurchased() async {
+    if (updating) return;
+    updateStatus(true);
+    final cleared =
+        await ProductsController.instance.clearPersonalProductsQuantity();
+    updateStatus(false);
+    if (cleared) {
+
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StreamBuilder(
-        stream: readProduct(),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return Text('Something went wrong');
-          } else if (snapshot.hasData) {
-            final products = snapshot.data?.docs;
-            if (products == null) {
-              return Text('Something went wrong');
-            }
-
-            return ListView(
-              children: products.map((s) {
-                final GroceryItem item = GroceryItem.fromJson(s.data().cast());
-                return buildProduct(item);
-              }).toList(),
-            );
-          } else {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
+      // floatingActionButton: updating
+      //     ? null
+      //     : FloatingActionButton.extended(
+      //         onPressed: () => markAsPurchased(),
+      //         label: const Text('Mark as Purchased'),
+      //       ),
+      body: updating
+          ? const Center(child: CircularProgressIndicator())
+          : GetX<ProductsController>(
+              init: Get.put<ProductsController>(ProductsController()),
+              builder: (productController) {
+                if (productController.personalProducts.isEmpty) {
+                  return const Center(
+                      child: Text('Add you groceries to list here'));
+                }
+                return ListView.builder(
+                  itemCount: productController.personalProducts.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    final product = productController.personalProducts[index];
+                    return PersonalProductItem(
+                      product: product,
+                      onUpdateCount: (count) =>
+                          productController.updatePersonalProduct(
+                              product.copyWith(quantity: count)),
+                    );
+                  },
+                );
+              }),
     );
   }
-
-  Widget buildProduct(GroceryItem product) => ListTile(
-        leading: CircleAvatar(
-          radius: 50,
-          backgroundImage: AssetImage(product.imagePath),
-        ),
-        title: Text(product.name),
-        subtitle: Text('${product.quantity}'),
-      );
-
-  Stream<QuerySnapshot<Map<String, dynamic>>> readProduct() =>
-      FirebaseFirestore.instance
-          .collection('users')
-          .doc(AuthenticationRepository.instance.firebaseUser.value!.uid)
-          .collection("products")
-          .snapshots();
 }
